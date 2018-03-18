@@ -60,6 +60,10 @@
 
   };
 
+  FB.logout(function(response) {
+   // Person is now logged out
+});
+
   // Load the SDK asynchronously
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -92,6 +96,6 @@
 
 <div id="status">
 </div>
-
+<input id="clickMe" type="button" value="clickme" onclick=" FB.logout();" />
 </body>
 </html>
