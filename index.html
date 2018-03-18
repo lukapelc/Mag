@@ -59,6 +59,11 @@
     });
 
   };
+  function logout() {
+            FB.logout(function(response) {
+              // user is now logged out
+            });
+        }
 
 
 
@@ -94,6 +99,6 @@
 
 <div id="status">
 </div>
-
+<button onclick="javascript:logout();">Logout from Facebook</button>
 </body>
 </html>
