@@ -1,7 +1,7 @@
 <?php
-require_once('baza.php');
+//require_once('baza.php');
 
-
+echo "hello?0";
 
 ?>
 
