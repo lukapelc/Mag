@@ -1,4 +1,5 @@
 <?php
+require_once('baza.php');
 
 
 
@@ -10,8 +11,34 @@
 <title>testmako</title>
 
 </head>
-<body >
->
+<body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    function insertnewperson(){
+        
+        var Ime=document.forms["post_name"]["ime"].value;
+        var Priimek=document.forms["post_name"]["priimek"].value;
+        var stevilka=document.forms["post_name"]["stevilka"].value;
+				$.ajax({
+					type :	'POST',
+					url  :	'insert.php',
+					data :	 {ime1:Ime, priimek1:Priimek, stevlika1:stevilka},
+					error: function (xhr, status, error) {
+						var err = eval("(" + xhr.responseText + ")");
+  						alert(err.Message);
+						alert("Error OGTT: " + error.responseText);
+					},
+				});					
+				
+			
+    }
+    </script>
+<form id="post_name">
+    ID nov uproabnik: <input type="text" name="ime" style="height:2vw; vertical-align:bottom;">
+    <input type="text" name="priimek" style="height:2vw; vertical-align:bottom;">
+    <input type="text" name="stevilka" style="height:2vw; vertical-align:bottom;">
+    <input name="Submit"  type="submit" value="insert" action="JavaScript:insertnewperson()"/>
+</form>
 
 </body>
 </html>
