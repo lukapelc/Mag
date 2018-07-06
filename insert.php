@@ -9,10 +9,10 @@ if (isset($_POST['ime1'])){
 	$St=$_POST['stevilka1'];
 	$query = "INSERT INTO testMarko (ime, priimek, stevilka)  VALUES ('$name', '$lastname' , '$St')";
 	$R1 = mysqli_query($query);
-	//if (!$R1) {
-	//die('Invalid query: ' . mysql_error());
-	//}
-	///unset($_POST);
+	if (!$R1) {
+	die('Invalid query: ' . mysql_error());
+	}
+	unset($_POST);
 }
 
 ?>
